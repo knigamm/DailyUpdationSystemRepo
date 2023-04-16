@@ -35,6 +35,7 @@ export class LoginComponent {
         next:(value)=>{
           for(let val of value){
             if(val.username===this.username && val.password===this.password){
+              this.server.setCurrentAdmin(val.id)
               this.router.navigate(['/admin']);
               return;
             }
