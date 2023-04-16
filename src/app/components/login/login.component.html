@@ -1,0 +1,19 @@
+<div class="login-box">
+    <div class="login-select-mode">
+        <div class="mode-container">
+            <button [ngStyle]="adminbtn?{'background-color':'rgb(184, 181, 181)'}:{'background-color':'#f0f0f0'}" id="btn1" (click)="togglebtn($event)">Admin</button>
+        </div>
+        <div class="mode-container">
+            <button [ngStyle]="contracbtn?{'background-color':'rgb(184, 181, 181)'}:{'background-color':'#f0f0f0'}" id="btn2" (click)="togglebtn($event)">Contractor</button>
+        </div>
+    </div>
+    <div class="login-form">
+        <form (ngSubmit)="onSubmit()">
+        <label for="username">Username:</label><br>
+        <input type="username" name="username" [(ngModel)]="username"><br>
+        <label for="password">Password:</label><br>
+        <input type="password" name="password" [(ngModel)]="password"><br>
+        <button type="submit" class="btn btn-primary">Login</button>
+    </form>
+    </div>
+</div>
