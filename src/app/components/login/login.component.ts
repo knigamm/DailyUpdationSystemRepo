@@ -15,6 +15,7 @@ export class LoginComponent {
   contracbtn:boolean=false;
   username:string='';
   password:string='';
+  displayFailAlert:boolean=false;
   constructor(private server:ServerinfoService,private router:Router){}
   togglebtn(event:MouseEvent){
     const btn=event.target as HTMLButtonElement;
@@ -40,6 +41,12 @@ export class LoginComponent {
               return;
             }
           }
+          this.username='';
+          this.password='';
+          this.displayFailAlert=true;
+          setTimeout(()=>{
+            this.displayFailAlert = false;
+          },3000);
           console.log("Couldn't log in");
         },
         error:()=>{console.log("Some error occured");}
@@ -56,6 +63,12 @@ export class LoginComponent {
               return;
             }
           }
+          this.username = '';
+          this.password = '';
+          this.displayFailAlert=true;
+          setTimeout(()=>{
+            this.displayFailAlert = false;
+          },3000);
           console.log("Couldn't log in");
         },
         error:()=>{console.log("Some error occured");}

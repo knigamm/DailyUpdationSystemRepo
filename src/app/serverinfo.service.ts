@@ -9,9 +9,9 @@ export class ServerinfoService {
 
   constructor(private http:HttpClient) { }
   adminUrl:string='http://localhost:3000/admin';
-  contracUrl:string='http://localhost:3000/contractor'
+  contracUrl:string='http://localhost:3000/contractor';
   currentAdmin:number | undefined;
-
+  adminurl:string = '';
   verifyAdmin(){
     return this.http.get<LOGIN[]>(this.adminUrl);
   }
@@ -26,4 +26,9 @@ export class ServerinfoService {
   getCurrentAdmin():number|undefined{
     return this.currentAdmin;
   }
+  getAdminInfo(adminid:number|undefined){
+    this.adminurl= `${this.adminUrl}/${adminid}`
+    return this.http.get<LOGIN>(this.adminurl);
+  }
+
 }
