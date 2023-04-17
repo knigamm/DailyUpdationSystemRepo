@@ -1,0 +1,15 @@
+
+<h2>Entries by {{currentContracInfo.contracname}}</h2>
+
+
+  <div *ngFor="let entry of oldesttop.reverse()" class="card contrac-card">
+    <div class="card-header">
+      <strong>Title :</strong> {{entry.entrytitle}}
+    </div>
+    <div class="card-body">
+      <h4 class="card-title"><strong>Description : </strong>{{entry.entrydesc}}</h4>
+      <p class="card-text"><strong>Date :</strong> {{entry.entrydate}}</p>
+
+      <button (click)="reviewbtn(entry)" [ngClass]="{'reviewed':entry.status!='pending'}" class="btn btn-primary btn-card">{{entry.status=="pending"?'Mark For Review':'Reviewed'}}</button>
+    </div>
+  </div>

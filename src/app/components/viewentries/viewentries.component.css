@@ -22,11 +22,7 @@ h2{
 .header button{
     margin-right:5px;
 }
-.admin-alert{
-    margin-top:20px;
-    margin-left: 30px;
-    margin-right:30px;
-}
+
 .contrac-card{
     margin:30px;
     color:white;
@@ -45,3 +41,8 @@ h2{
     background-color: #198754;
     color:white;
 }
+.reviewed{
+    background-color: #198754;
+    color:white;
+}
+

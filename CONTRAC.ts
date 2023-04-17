@@ -1,4 +1,5 @@
 interface CONTRAC{
+    id?:number,
     username:string,
     password:string,
     toreport:number,
