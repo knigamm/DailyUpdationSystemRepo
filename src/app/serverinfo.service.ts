@@ -51,4 +51,8 @@ export class ServerinfoService {
     this.entryurl = `${this.entryUrl}/${entry.id}`
     return this.http.put<ENTRY>(this.entryurl,entry,httpOptions);
   }
+
+  addEntry(entry:ENTRY){
+    return this.http.post<ENTRY>(this.entryUrl,entry,httpOptions);
+  }
 }

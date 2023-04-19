@@ -1,0 +1,16 @@
+
+<div class="login-box">
+    <h4>Add New Entry</h4>
+    <div class="login-form">
+        <form (ngSubmit)="save()">
+        <label for="title">Entry Title:</label><br>
+        <input type="text" name="title" [(ngModel)]="title"><br>
+        <label for="desc">Entry Description:</label><br>
+        <input type="text" name="desc" [(ngModel)]="desc"><br>
+        <div class="btn-bar">
+            <button (click)="close()" class="btn btn-primary">Close</button>
+            <button type="submit" class="btn btn-primary">Add</button>
+        </div>
+    </form>
+    </div>
+</div>

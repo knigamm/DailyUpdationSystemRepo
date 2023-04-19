@@ -1,0 +1,25 @@
+<nav class="navbar navbar-dark bg-dark header">
+    <a><h3>Dashboard</h3></a>
+    <h6 id="admin-name">{{currentContracInfo.contracname}}</h6>
+    <button (click)="onLogout()" class="btn btn-outline-success my-2 my-sm-0">Logout</button>
+</nav>
+<div class="addentry-bar">
+    <h2>My Entries</h2>
+    <div (click)="onAddEntry()" class="add-btn">
+        <img src="../../../assets/plus (2).png">
+        <button >Add New Entry</button>
+    </div>
+    
+</div>
+
+<div *ngFor="let entry of oldesttop.reverse()" class="card contrac-card">
+    <div class="card-header">
+      <strong>Title :</strong> {{entry.entrytitle}}
+    </div>
+    <div class="card-body">
+      <h4 class="card-title"><strong>Description : </strong>{{entry.entrydesc}}</h4>
+      <p class="card-text"><strong>Date :</strong> {{entry.entrydate}}</p>
+
+      <p  [ngClass]="{'reviewed':entry.status!='pending'}" class="btn btn-primary btn-card">{{entry.status=="pending"?'Review Pending':'Reviewed'}}</p>
+    </div>
+  </div>

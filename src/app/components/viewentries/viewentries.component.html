@@ -1,8 +1,35 @@
+<nav class="navbar navbar-dark bg-dark header">
+  <a><h3>Dashboard</h3></a>
+  <h6 id="admin-name">{{currentAdminInfo.adminname}}</h6>
+  <button (click)="onLogout()" class="btn btn-outline-success my-2 my-sm-0">Logout</button>
+</nav>
 
-<h2>Entries by {{currentContracInfo.contracname}}</h2>
+<div (click)="onBack()" class="back-btn">
+  <img src="../../../assets/arrow.png">
+  <p>Back</p>
+</div>
+
+<div class="entry-header">
+<h2>Entries by <span id="contracname">{{currentContracInfo.contracname}}</span></h2>
+<div class="radios">
+  <div class="form-check">
+    <input class="form-check-input" value="newest" type="radio" name="flexRadioDefault" id="flexRadioDefault1" [(ngModel)]="order" checked>
+    <label class="form-check-label" for="flexRadioDefault1">
+      Newest First
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" value="oldest" type="radio" name="flexRadioDefault" id="flexRadioDefault2" [(ngModel)]="order">
+    <label class="form-check-label" for="flexRadioDefault2">
+      Oldest First
+    </label>
+  </div>
+  <button id="submitthis" (click)="onSubmit()" type="submit">Change</button>
+</div>
+</div>
 
 
-  <div *ngFor="let entry of oldesttop.reverse()" class="card contrac-card">
+  <div *ngFor="let entry of order_check ? oldesttop.reverse():oldesttop" class="card contrac-card">
     <div class="card-header">
       <strong>Title :</strong> {{entry.entrytitle}}
     </div>

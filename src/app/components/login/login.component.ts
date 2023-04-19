@@ -58,7 +58,8 @@ export class LoginComponent {
         next:(value)=>{
           for(let val of value){
             if(val.username===this.username && val.password===this.password){
-
+              const idtopass=val.id as number;
+              this.router.navigate(['/contrac',idtopass]);
               console.log("Logged In");
               return;
             }

@@ -11,6 +11,9 @@ import { LOGIN } from 'LOGIN';
 export class AdmindashboardComponent implements OnInit{
   constructor(private server:ServerinfoService,private activeroute:ActivatedRoute,private route:Router){}
   currentAdmin:number|undefined;
+
+
+
   contractodisplayongoing:CONTRAC[]=[];
   contractodisplaycompleted:CONTRAC[]=[];
   currentAdminInfo:LOGIN={username:"",password:"",adminname:""};
@@ -33,7 +36,6 @@ export class AdmindashboardComponent implements OnInit{
 
   }
 
-  
   onLogout(){
     this.route.navigate(['']);
   }

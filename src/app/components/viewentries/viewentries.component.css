@@ -10,8 +10,11 @@ h3{
     margin-top:10px;
 }
 h2{
-    margin-left:30px;
-    margin-top:20px;
+    margin-top:5px;
+    margin-left:5px;
+}
+#contracname{
+    color:#198754;
 }
 .header{
     display:flex;
@@ -26,8 +29,12 @@ h2{
 .contrac-card{
     margin:30px;
     color:white;
+    transition: all 0.6 ease-in-out;
     border-color:#198754;
     background-color:#212529;
+}
+.contrac-card:hover{
+    transform: scale(1.008);
 }
 .card-header{
     background-color: #198754;
@@ -46,3 +53,59 @@ h2{
     color:white;
 }
 
+.entry-header{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    border:5px solid #198754;
+    margin-left:30px;
+    margin-right:30px;
+    margin-top:10px;
+    padding:10px;
+    background-color: #19875447;
+}
+.radios{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top:5px;
+    margin-right:5px;
+}
+#submitthis{
+    background-color: #198754; 
+  color: white; 
+  padding: 4px 6px; 
+  border: none; 
+  border-radius: 4px;
+  cursor: pointer; /* Add a pointer cursor */
+  font-size: 16px;
+}
+#submitthis:hover{
+    background-color: #4CAF50;
+}
+.back-btn{
+    display:flex;
+    justify-content: start;
+    align-items: center;
+    width:4%;
+    height:5%;
+    flex-shrink: 0;
+    margin-top:10px;
+    margin-left:35px;
+    cursor: pointer;
+    transition: all 0.9 ease-in;
+}
+.back-btn p{
+    color:#198754;
+    margin-top:14px;
+    font-size: 18px;
+    
+}
+.back-btn img{
+    height:16px;
+    width:16px;
+    margin-right:5px;
+}
+.back-btn:hover{
+    transform: scale(1.002);
+}

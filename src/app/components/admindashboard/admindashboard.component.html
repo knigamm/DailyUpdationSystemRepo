@@ -8,7 +8,7 @@
     <strong>Login Successful! </strong> Welcome, {{currentAdminInfo.adminname.toUpperCase()}}.
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
   </div>
-<router-outlet>
+  <div class="project-list">
   <h2>Ongoing Projects</h2>
   <div *ngFor="let contrac of contractodisplayongoing" class="card contrac-card">
     <div class="card-header">
@@ -17,7 +17,7 @@
     <div class="card-body">
       <h4 class="card-title">{{contrac.projecttitle}}</h4>
       <p class="card-text">{{contrac.projectdesc}}</p>
-      <a [routerLink]="['/entry',contrac.id]" class="btn btn-primary btn-card">View Entries</a>
+      <button [routerLink]="['/entry',contrac.id]" [queryParams]="{info:currentAdminInfo.id}" class="btn btn-primary btn-card">View Entries</button>
     </div>
   </div>
 
@@ -29,6 +29,8 @@
     <div class="card-body">
       <h4 class="card-title">{{contrac.projecttitle}}</h4>
       <p class="card-text">{{contrac.projectdesc}}</p>
-      <a [routerLink]="['/entry',contrac.id]" class="btn btn-primary btn-card">View Entries</a>
+      <button [routerLink]="['/entry',contrac.id]" [queryParams]="{info:currentAdminInfo.id}" class="btn btn-primary btn-card">View Entries</button>
     </div>
   </div>
+  </div>
+  
