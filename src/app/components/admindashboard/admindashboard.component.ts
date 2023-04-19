@@ -35,6 +35,12 @@ export class AdmindashboardComponent implements OnInit{
       })
 
   }
+  markcomp(contrac:CONTRAC){
+    contrac.projectstatus='Completed';
+    this.server.markcomplete(contrac).subscribe();
+    this.contractodisplayongoing = this.contractodisplayongoing.filter((val)=>val.id!=contrac.id);
+    this.contractodisplaycompleted.push(contrac);
+  }
 
   onLogout(){
     this.route.navigate(['']);

@@ -52,6 +52,10 @@ export class ServerinfoService {
     return this.http.put<ENTRY>(this.entryurl,entry,httpOptions);
   }
 
+  markcomplete(contrac:CONTRAC){
+    this.contracurl = `${this.contracUrl}/${contrac.id}`
+    return this.http.put<CONTRAC>(this.contracurl,contrac,httpOptions);
+  }
   addEntry(entry:ENTRY){
     return this.http.post<ENTRY>(this.entryUrl,entry,httpOptions);
   }

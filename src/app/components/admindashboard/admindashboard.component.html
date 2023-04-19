@@ -18,6 +18,7 @@
       <h4 class="card-title">{{contrac.projecttitle}}</h4>
       <p class="card-text">{{contrac.projectdesc}}</p>
       <button [routerLink]="['/entry',contrac.id]" [queryParams]="{info:currentAdminInfo.id}" class="btn btn-primary btn-card">View Entries</button>
+    <button (click)="markcomp(contrac)" id="secbtn" class="btn btn-primary btn-card">Mark as Complete</button>
     </div>
   </div>
 
